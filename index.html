@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select 2 Component</title>
+    <script>
+        let Data = []
+        async function getData (){
+            await fetch("data.json").then(json => json.json()).then(res => Data = res)
+            document.querySelector('select-2').setAttribute('data',Data)
+        }
+        getData()
+    </script>
+</head>
+<body>
+
+    <select-2 data='[{"country":"iran","age":"23"},{"country":"usa","age":"25"}]'></select-2>
+
+    <script src="./select-2.js"></script>
+  </body>
+</html>
