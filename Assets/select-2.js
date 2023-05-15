@@ -1,29 +1,27 @@
 class Select_2 extends HTMLElement {
   constructor() {
     super();
-
-    this.data = []
   }
 
   connectedCallback() {
-    let Data = JSON.parse(this.attributes.data.value);
-    Data.forEach(item => {
-      this.data.push(item.country)
-    });
-    this.render();
-  }
+    let data_str = this.getAttribute("data-route");
+    let info = [];
 
-  render() {
-    let selectbox = document.createElement('select')
-    selectbox.setAttribute('class','select2')
-    let allopt = ''
-    for(let i=0;i<this.data.length;i++){
-      let opt = `<option>${this.data[i]}</h1></option>`;
+    async function getData() {
+      info = await fetch(data_str)
+        .then((json) => json.json())
+        .then();
+      let selectbox = document.createElement("select");
+      selectbox.setAttribute("class", "select2");
+      let allopt = "";
+      info.forEach((element) => {
+        let opt = `<option value='${element.id}'>${element.country}</option>`;
         allopt += opt;
+      });
+      selectbox.innerHTML = allopt;
+      document.querySelector('body').appendChild(selectbox)
     }
-    console.log(allopt);
-    selectbox.innerHTML = allopt
-    this.appendChild(selectbox)
+    getData();
   }
 }
 
