@@ -3,7 +3,7 @@
     height: 50px;
     box-shadow: 1px 1px 5px gray;
     padding: 10px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     display: flex;
     justify-content: space-between;
     font-size: 18px;

@@ -18,11 +18,7 @@ class Select_2 extends HTMLElement {
     selectbox.setAttribute('class','select2')
     let allopt = ''
     for(let i=0;i<this.data.length;i++){
-      let opt = `
-        <option>
-          <h1>${this.data[i]}</h1>
-        </option>
-        `;
+      let opt = `<option>${this.data[i]}</h1></option>`;
         allopt += opt;
     }
     console.log(allopt);
