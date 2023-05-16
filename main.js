@@ -1,4 +1,4 @@
-document.getElementById("selectbox").addEventListener(onclick,function(){
-    console.log('hi');
-    document.querySelector('input').value = document.querySelector('select-2').value
-})
+// document.getElementById("selectbox").addEventListener(onclick,function(){
+//     console.log('hi');
+//     document.querySelector('input').value = document.getElementById("selectbox").value
+// })

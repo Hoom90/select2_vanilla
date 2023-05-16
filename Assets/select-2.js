@@ -5,6 +5,7 @@ class Select_2 extends HTMLElement {
 
   connectedCallback() {
     let data_str = this.getAttribute("data-route");
+    let parent = this.getAttribute("parent")
     let info = [];
 
     async function getData() {
@@ -19,7 +20,7 @@ class Select_2 extends HTMLElement {
         allopt += opt;
       });
       selectbox.innerHTML = allopt;
-      document.querySelector('body').appendChild(selectbox)
+      document.querySelector(parent).appendChild(selectbox)
     }
     getData();
   }
